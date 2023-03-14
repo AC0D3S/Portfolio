@@ -409,7 +409,7 @@ nav{
 /*FOOTER*/
 
 footer{
-    background-color: #242424;
+    background-color: black;
 }
 
 
@@ -422,8 +422,8 @@ footer{
 }
 
 .footer__logo--img{
-    width: 70px;
-    height: 70px;
+    width: 150px;
+    height: 110px;
 }
 
 .footer__social--list{
