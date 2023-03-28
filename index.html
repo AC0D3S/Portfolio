@@ -3,25 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Armand Marx</title>
-    <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./assets/ARMAND_LOGO_BLACK.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css" />
     <script
-      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      src="https://kit.fontawesome.com/bcdc149e3b.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./app.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("FrswTJJ4WFHG2ExtP");
+   })();
+</script>
   </head>
   <body>
-    <section id="about-me">
+    <section id="landing-page" onmousemove="moveBackground(event)">
       <nav>
-        <div class="personal__logo">Armand Marx</div>
+        <figure>
+          <img id="personal-logo" src="./assets/ARMAND_LOGO_BLACK.jpeg" alt="" />
+        </figure>
         <ul class="nav__link--list">
-          <li class="nav__link">
+          <li class="nav__link" onclick="toggleModal()">
             <a
-              href="#languages"
+              href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Languages</a
+              >About</a
             >
           </li>
           <li class="nav__link">
@@ -31,118 +42,150 @@
               >Projects</a
             >
           </li>
-          <li class="nav__link">
-            <a href="mailto:armandcodes@gmail.com" class="nav__link--anchor nav__link--anchor-primary"
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
               >Contact</a
             >
           </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <i class="fas fa-circle-half-stroke"></i>
+          </li>
         </ul>
       </nav>
-      <div class="flex flex-1">
-        <div class="about-me__info row">
-          <div class="about-me__info--container">
-            <figure class="about-me__picture--mask">
-              <img
-                src="./assets/me.jpg"
-                class="about-me__picture"
-                alt="Picture Of Me"
-              />
-            </figure>
-            <h1 class="about-me__info--title">
-              Hey! I'm <span class="text--purple">Armand Marx</span>&nbsp;<span
-                class="wave"
-                >👋</span
-              >
-            </h1>
-            <p class="about-me__info--para">
-              I'm a
-              <strong class="text--purple">professional problem solver</strong>
-              when it comes to the frontend of website design. I have a burning
-              passion for designing websites that will change the internet game.
-            </p>
-            <div class="about-me__links">
-              <a href="" class="about-me__link">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="https://github.com/AC0D3S" class="about-me__link" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="mailto:armandcodes@gmail.com" class="about-me__link" target="_blank">
-                <i class="fas fa-envelope"></i>
-              </a>
-              <a href="" target="_blank" class="about-me__link">
-                <i class="fas fa-file-pdf"></i>
-              </a>
-            </div>
-          </div>
-          <figure class="about-me__img--container">
-            <img
-              src="./assets/undraw_website_builder_re_ii6e.svg"
-              class="about-me__img"
-              alt=""
-            />
-          </figure>
-        </div>
-      </div>
-    </section>
 
-    <section id="languages">
-      <div class="container">
-        <div class="row">
-          <h1 class="section__title">
-            This is my <span class="text--purple">technology stack</span>
-          </h1>
-          <div class="language__list">
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img src="./assets/html.png" alt="" class="language__img" />
-              </figure>
-              <span class="language__name">HTML</span>
-            </div>
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img src="./assets/css-3.png" alt="" class="language__img" />
-              </figure>
-              <span class="language__name">CSS</span>
-            </div>
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img src="./assets/js.png" alt="" class="language__img" />
-              </figure>
-              <span class="language__name">JS</span>
-            </div>
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img src="./assets/react.png" alt="" class="language__img" />
-              </figure>
-              <span class="language__name">REACT</span>
-            </div>
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title color">I'm Armand.</h1>
+          <p class="header__para">
+            I'm a <b class="color">Professional Problem Solver</b> when it comes to the frontend of website development. I have a burning
+            passion for designing websites that will change the internet game.
+            <br />
+            Here's a bit more <b class="color click" onClick="toggleModal()">about me</b>.
+          </p>
+          <div class="social__list">
+            <a href="" target="_blank" class="social__link click">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="" target="_blank" class="social__link click">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="" target="_blank" class="social__link click">
+              <i class="fa-solid fa-file"></i>
+            </a>
           </div>
         </div>
+      </header>
+      
+      <a href="#">
+        <button class="mail__button click" onclick="toggleModal()">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+      </a>
+
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+          <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer.</h4>
+          <p class="modal__para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quasi excepturi accusantium distinctio, repudiandae omnis! Corrupti porro nihil explicabo esse.
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur doloribus necessitatibus rem vel itaque soluta neque sint ad iusto quo.
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/html.png" alt="">
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/css-3.png" alt="">
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/js.png" alt="">
+              <span class="language__name">JavaScript</span>           
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/react.png" alt="">
+              <span class="language__name">React</span>
+            </figure>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>  
+
+          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+          <h4 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities.</h4>
+
+          <form onsubmit="contact(event)" id="contact__form">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" ></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" ></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea class="input" name="message" type="text" ></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send it my way
+            </button>
+          </form>
+
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! Looking forward to speaking to you soon.
+          </div>
+
+        </div>
+
       </div>
+
+      <img src="./assets/semi circle.svg" class="shape shape--0">
+      <img src="./assets/circle.svg" class="shape shape--1">
+      <img src="./assets/squiggly.svg" class="shape shape--2">
+      <img src="./assets/circle.svg" class="shape shape--3">
+      <img src="./assets/triangle.svg" class="shape shape--4">
+      <img src="./assets/circle.svg" class="shape shape--5">
+      <img src="./assets/squiggly.svg" class="shape shape--6">
+      <img src="./assets/circle.svg" class="shape shape--7">
+      <img src="./assets/semi circle.svg" class="shape shape--8">
+
     </section>
 
     <section id="projects">
       <div class="container">
         <div class="row">
           <h1 class="section__title">
-            Some of my <span class="text--purple">work</span>
+            Here are some of my <span class="color">projects</span>
           </h1>
-          <ul class="project__list">
+
+          <ul class="porject__list">
             <li class="project">
               <div class="project__wrapper">
                 <img
-                  src="./assets/PortfolioProject.png"
-                  alt="Portfolio"
+                  src="./assets/AdvancedPort-project.png"
+                  alt=""
                   class="project__img"
                 />
                 <div class="project__description">
-                  <h3 class="project__description--title">Portfolio</h3>
+                  <h3 class="project__description--title">Current Portfolio</h3>
                   <h4 class="project__description--sub-title">
-                    HTML, CSS
+                    HTML, CSS, JavaScript
                   </h4>
                   <p class="project__description--para">
-                    This is my first portfolio created AKA the one you are looking at right now, I used HTML5 and CSS for my tech stack.
+                    This is my current portfolio AKA the one you are lokking at, I used HTML5, CSS3 and JavaScript to complete the project
                   </p>
                   <div class="project__description--links">
                     <a
@@ -163,7 +206,7 @@
               <div class="project__wrapper">
                 <img
                   src="./assets/E-commerceProject.png"
-                  alt="E-Commerce"
+                  alt=""
                   class="project__img"
                 />
                 <div class="project__description">
@@ -193,7 +236,7 @@
               <div class="project__wrapper">
                 <img
                   src="./assets/TreactProject.png"
-                  alt="Treact"
+                  alt=""
                   class="project__img"
                 />
                 <div class="project__description">
@@ -202,7 +245,7 @@
                     HTML, CSS, JavaScript
                   </h4>
                   <p class="project__description--para">
-                    This is a clone website with some twist I added, I used HTML5, CSS and JavaScript, the JavaScript comes into play in the form of a hamburger menu on smaller screens
+                    This is a clone website with some twist I added, I used HTML5, CSS and JavaScript, the JavaScript comes into play in the form of a hamburger menu on smaller screens.
                   </p>
                   <div class="project__description--links">
                     <a
@@ -213,6 +256,36 @@
                       <i class="fab fa-github"></i>
                     </a>
                     <a href="https://ac0d3s.github.io/TreactClone/" class="project__description--link" target="_blank">
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/PortfolioProject.png"
+                  alt=""
+                  class="project__img"
+                />
+                <div class="project__description">
+                  <h3 class="project__description--title">Old Portfolio</h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS
+                  </h4>
+                  <p class="project__description--para">
+                    This is my old portfolio, this project is no longer working. I used CSS and HTML.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href=""
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a href="" class="project__description--link" target="_blank">
                       <i class="fas fa-link"></i>
                     </a>
                   </div>
@@ -237,29 +310,24 @@
         </a>
         <div class="footer__social--list">
           <a
-            href="https://github.com/AC0D3S"
+            href=""
             target="_blank"
             class="footer__social--link link__hover-effect link__hover-effect--white"
-            target="_blank"
             >GitHub</a
           >
           <a
             href=""
             target="_blank"
             class="footer__social--link link__hover-effect link__hover-effect--white"
-            target="_blank"
             >LinkIn</a
           >
           <a
-            href="mailto:armandcodes@gmail.com"
-            target="_blank"
+            href="#" onclick="toggleModal()"
             class="footer__social--link link__hover-effect link__hover-effect--white"
-            target="_blank"
-            >Email</a
+            >Contact</a
           >
           <a
             href=""
-            target="_blank"
             class="footer__social--link link__hover-effect link__hover-effect--white"
             target="_blank"
             >Resume</a
